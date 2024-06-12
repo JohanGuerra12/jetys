@@ -1,0 +1,10 @@
+
+db.Doctor.find({ especialidad: "Pediatría" })
+db.Paciente.find({ tipoDocumento: { $in: ["tarjeta de identidad", "registro civil"] } })
+db.Paciente.find({ "eps.nombre": "EPS_Sura" })
+db.Paciente.find({ "eps.sisbén": "Grupo C" })
+db.Citas.find({ tipoCita: "Medicina General" })
+db.Citas.find({ tipoCita: { $ne: "Medicina General" } })
+db.Citas.find({ valorCita: { $gt: 45 } })
+db.Paciente.find({ correoElectronico: { $regex: "@gmail.com$" } })
+db.Citas.find({ lugar: { $in: ["Sede A", "Sede B"] } })
